@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Bizim Hikayemiz 💗</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #ffd6e8, #ffeaf4);
+    overflow-x: hidden;
+    text-align: center;
+    color: #6b2c3e;
+}
+
+/* Ana içerik */
+#content {
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+/* Kalpler */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 24px;
+    animation: floatUp linear forwards;
+    color: #ff4d6d;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="content">
+    <h1>💗 Bizim Hikayemiz 💗</h1>
+    <p>
+        Bu sayfa bizim için…  
+        Gülüşlerin, anılarımız, kırıldığımız ama yine de vazgeçmediğimiz her an için.
+    </p>
+
+    <p>
+        Seni çok seviyorum.  
+        Bu küçük site bile hissettiklerimin yanında çok küçük kalıyor…
+    </p>
+
+    <p>💞</p>
+</div>
+
+<script>
+// Uçan kalpler
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
